@@ -31,6 +31,7 @@ import Motion from '../ui/util/optional_motion';
 import { SearchResults } from './components/search_results';
 import ComposeFormContainer from './containers/compose_form_container';
 import SearchContainer from './containers/search_container';
+import Announcements from './components/announcements';
 
 const messages = defineMessages({
   start: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
@@ -118,6 +119,7 @@ class Compose extends PureComponent {
           <div className='drawer__pager'>
             <div className='drawer__inner' onFocus={this.onFocus}>
               <ComposeFormContainer autoFocus={!isMobile(window.innerWidth)} />
+              <Announcements />
 
               <div className='drawer__inner__mastodon'>
                 <img alt='' draggable='false' src={mascot || elephantUIPlane} />
