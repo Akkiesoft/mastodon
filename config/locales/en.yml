@@ -1806,6 +1806,7 @@ en:
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
+    haiku: Haiku
     system: Automatic (use system theme)
   time:
     formats:

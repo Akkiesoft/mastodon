@@ -1,0 +1,46 @@
+// Dependent colors
+$black: #333333;
+$white: #ffffff;
+
+$haiku-red: #b36b85;
+$haiku-green: #7ba86d;
+$haiku-blue: #6c8ca5;
+
+$classic-base-color: $white;
+$classic-primary-color: #00ff00;
+$classic-secondary-color: $haiku-green;
+$classic-highlight-color: #ffff00;
+
+// Differences
+$success-green: #3c754d;
+
+$base-overlay-background: $white !default;
+$valid-value-color: $success-green !default;
+
+$ui-base-color: $classic-secondary-color !default;
+// discovered  progress bar
+$ui-base-lighter-color: $haiku-blue;
+$ui-primary-color: $haiku-red;
+$ui-secondary-color: $classic-base-color !default;
+$ui-highlight-color: $haiku-red;
+
+$primary-text-color: $black !default;
+$darker-text-color: $classic-base-color !default;
+$dark-text-color: #444b5d;
+$action-button-color: #606984;
+
+$inverted-text-color: $black !default;
+$lighter-text-color: $classic-base-color !default;
+$light-text-color: $black;
+
+//Newly added colors
+$account-background-color: $white !default;
+
+//Invert darkened and lightened colors
+@function darken($color, $amount) {
+  @return hsl(hue($color), saturation($color), lightness($color) + $amount);
+}
+
+@function lighten($color, $amount) {
+  @return hsl(hue($color), saturation($color), lightness($color) - $amount);
+}
