@@ -28,7 +28,7 @@ import { messages as navbarMessages } from '../ui/components/navigation_bar';
 
 import { Search } from './components/search';
 import ComposeFormContainer from './containers/compose_form_container';
-import Announcements from './components/announcements';
+import UnaristAnnouncements from './components/announcements';
 
 const messages = defineMessages({
   live_feed_public: {
@@ -166,7 +166,7 @@ const Compose: React.FC<{ multiColumn: boolean }> = ({ multiColumn }) => {
         <div className='drawer__pager'>
           <div className='drawer__inner'>
             <ComposeFormContainer />
-            <Announcements />
+            <UnaristAnnouncements />
 
             <div className='drawer__inner__mastodon'>
               <img alt='' draggable='false' src={mascot ?? elephantUIPlane} />
