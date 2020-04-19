@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import classnames from 'classnames';
 
-class Announcement extends React.PureComponent {
+class UnaristAnnouncement extends React.PureComponent {
 
   static propTypes = {
     item: ImmutablePropTypes.map,
@@ -15,10 +15,10 @@ class Announcement extends React.PureComponent {
     const { item } = this.props;
 
     const contents = [];
-    contents.push(<div key='body' className='announcements__body'>{item.get('body')}</div>);
+    contents.push(<div key='body' className='unarist__announcements__body'>{item.get('body')}</div>);
     if (item.get('icon')) {
       contents.push(
-        <div key='icon' className='announcements__icon'>
+        <div key='icon' className='unarist__announcements__icon'>
           <img src={item.get('icon')} alt='' />
         </div>
       );
@@ -27,8 +27,8 @@ class Announcement extends React.PureComponent {
     const href = item.get('href');
 
     const classname = classnames({
-      'announcements__item': true,
-      'announcements__item--clickable': !!href,
+      'unarist__announcements__item': true,
+      'unarist__announcements__item--clickable': !!href,
     });
 
     if (!href) {
@@ -42,10 +42,10 @@ class Announcement extends React.PureComponent {
 
 }
 
-export default class Announcements extends React.PureComponent {
+export default class UnaristAnnouncements extends React.PureComponent {
 
   state = {
-    items: Announcements.cache || Immutable.Map(),
+    items: UnaristAnnouncements.cache || Immutable.Map(),
   }
 
   static isCacheControlled = false
@@ -88,15 +88,15 @@ export default class Announcements extends React.PureComponent {
 
     axios.get('/system/announcements.json', {
       headers: {
-        'If-Modified-Since': !Announcements.isCacheControlled && Announcements.lastDate || '',
+        'If-Modified-Since': !UnaristAnnouncements.isCacheControlled && UnaristAnnouncements.lastDate || '',
       },
     })
       .then(resp => {
-        Announcements.isCacheControlled = !!resp.headers['cache-control'];
-        Announcements.lastDate = resp.headers['last-modified'];
+        UnaristAnnouncements.isCacheControlled = !!resp.headers['cache-control'];
+        UnaristAnnouncements.lastDate = resp.headers['last-modified'];
         return resp;
       })
-      .then(resp => this.setState({ items: Announcements.cache = Immutable.fromJS(resp.data) || {} }))
+      .then(resp => this.setState({ items: UnaristAnnouncements.cache = Immutable.fromJS(resp.data) || {} }))
       .catch(err => err.response.status !== 304 && console.warn(err))
       .then(this.deleteServiceWorkerCache)
       .then(this.setPolling)
@@ -107,10 +107,10 @@ export default class Announcements extends React.PureComponent {
     const { items } = this.state;
 
     return (
-      <ul className='announcements'>
+      <ul className='unarist__announcements'>
         {items.entrySeq().map(([key, item]) =>
           (<li key={key}>
-            <Announcement item={item} />
+            <UnaristAnnouncement item={item} />
           </li>)
         )}
       </ul>
