@@ -6,6 +6,7 @@ import ComposeFormContainer from 'mastodon/features/compose/containers/compose_f
 import NavigationContainer from 'mastodon/features/compose/containers/navigation_container';
 import LinkFooter from './link_footer';
 import { changeComposing } from 'mastodon/actions/compose';
+import UnaristAnnouncements from 'mastodon/features/compose/components/announcements';
 
 export default @connect()
 class ComposePanel extends React.PureComponent {
@@ -28,6 +29,7 @@ class ComposePanel extends React.PureComponent {
         <SearchContainer openInRoute />
         <NavigationContainer onClose={this.onBlur} />
         <ComposeFormContainer singleColumn />
+        <UnaristAnnouncements />
         <LinkFooter withHotkeys />
       </div>
     );
