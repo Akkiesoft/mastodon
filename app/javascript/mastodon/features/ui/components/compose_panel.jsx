@@ -10,6 +10,7 @@ import SearchContainer from 'mastodon/features/compose/containers/search_contain
 import { identityContextPropShape, withIdentity } from 'mastodon/identity_context';
 
 import LinkFooter from './link_footer';
+import UnaristAnnouncements from 'mastodon/features/compose/components/announcements';
 
 class ComposePanel extends PureComponent {
   static propTypes = {
@@ -52,7 +53,10 @@ class ComposePanel extends PureComponent {
         )}
 
         {signedIn && (
-          <ComposeFormContainer singleColumn />
+          <>
+            <ComposeFormContainer singleColumn />
+            <UnaristAnnouncements />
+          </>
         )}
 
         <LinkFooter />
