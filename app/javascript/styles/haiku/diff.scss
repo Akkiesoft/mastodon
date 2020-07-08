@@ -372,3 +372,10 @@
 .directory__tag > div {
   box-shadow: none;
 }
+
+.status-card__title {
+  color: $primary-text-color
+}
+.upload-progress {
+  color: $haiku-green;
+}
