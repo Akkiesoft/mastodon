@@ -5,19 +5,29 @@ $white: #ffffff;
 $haiku-red: #b36b85;
 $haiku-green: #7ba86d;
 $haiku-blue: #6c8ca5;
+$haiku-green-light: #cddfc9;
+$haiku-red-light: #f5dddd;
+$haiku-blue-light: #b8cbd9;
+$haiku-green-dark: #659357;
+$haiku-red-dark: #bd6260;
+$haiku-blue-dark: #557790;
 
-$classic-base-color: $white;
-$classic-primary-color: #00ff00;
+$warning-red: $haiku-red-dark;
+
+$classic-base-color: #18460d;
+$classic-primary-color: $haiku-blue;
 $classic-secondary-color: $haiku-green;
-$classic-highlight-color: #ffff00;
+$classic-highlight-color: #6364ff;
 
 // Differences
 $success-green: #3c754d;
 
 $base-overlay-background: $white !default;
+$simple-background-color: $white !default;
 $valid-value-color: $success-green !default;
 
 $ui-base-color: $classic-secondary-color !default;
+
 // discovered  progress bar
 $ui-base-lighter-color: $haiku-blue;
 $ui-primary-color: $haiku-red;
@@ -33,10 +43,10 @@ $inverted-text-color: $black !default;
 $lighter-text-color: $classic-base-color !default;
 $light-text-color: $black;
 
-//Newly added colors
+// Newly added colors
 $account-background-color: $white !default;
 
-//Invert darkened and lightened colors
+// Invert darkened and lightened colors
 @function darken($color, $amount) {
   @return hsl(hue($color), saturation($color), lightness($color) + $amount);
 }
@@ -44,3 +54,5 @@ $account-background-color: $white !default;
 @function lighten($color, $amount) {
   @return hsl(hue($color), saturation($color), lightness($color) - $amount);
 }
+
+$emojis-requiring-inversion: 'chains';
