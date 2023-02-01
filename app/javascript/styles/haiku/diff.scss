@@ -1,8 +1,16 @@
 // Notes!
 // Sass color functions, "darken" and "lighten" are automatically replaced.
 
-.ui {
-  background: $white;
+body {
+  &.app-body {
+    &.layout-single-column {
+      background: $haiku-green-light;
+    }
+
+    &.layout-multiple-columns {
+      background: $haiku-green-light;
+    }
+  }
 }
 
 // Change the colors of button texts
@@ -83,8 +91,9 @@
   border-color: $ui-base-color;
 }
 
-
-.fa-reply,.fa-reply-all,a.mention,
+.fa-reply,
+.fa-reply-all,
+a.mention,
 .status__action-bar__counter__label {
   color: $haiku-red;
 }
@@ -373,9 +382,16 @@
   box-shadow: none;
 }
 
-.status-card__title {
-  color: $primary-text-color
+.language-dropdown__dropdown__results__item:hover,
+.language-dropdown__dropdown__results__item:focus,
+.language-dropdown__dropdown__results__item:active {
+  background-color: $haiku-red-light;
 }
+
+.status-card__title {
+  color: $primary-text-color;
+}
+
 .upload-progress {
   color: $haiku-green;
 }
