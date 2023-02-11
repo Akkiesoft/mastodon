@@ -9,7 +9,7 @@ class UnaristAnnouncement extends React.PureComponent {
 
   static propTypes = {
     item: ImmutablePropTypes.map,
-  }
+  };
 
   render() {
     const { item } = this.props;
@@ -46,11 +46,11 @@ export default class UnaristAnnouncements extends React.PureComponent {
 
   state = {
     items: UnaristAnnouncements.cache || Immutable.Map(),
-  }
+  };
 
-  static isCacheControlled = false
-  static lastDate = null
-  static cache = null
+  static isCacheControlled = false;
+  static lastDate = null;
+  static cache = null;
 
   constructor () {
     super();
@@ -63,14 +63,14 @@ export default class UnaristAnnouncements extends React.PureComponent {
 
   setPolling = () => {
     this.timer = setTimeout(this.refresh, 60 * 1000);
-  }
+  };
 
   cancelPolling = () => {
     if (this.timer !== null) {
       clearTimeout(this.timer);
       this.timer = null;
     }
-  }
+  };
 
   deleteServiceWorkerCache = () => {
     // files in /system/ will be cached by SW
@@ -81,7 +81,7 @@ export default class UnaristAnnouncements extends React.PureComponent {
     } else {
       return Promise.resolve();
     }
-  }
+  };
 
   refresh = () => {
     this.timer = null;
@@ -101,7 +101,7 @@ export default class UnaristAnnouncements extends React.PureComponent {
       .then(this.deleteServiceWorkerCache)
       .then(this.setPolling)
       .catch(err => err && console.warn(err));
-  }
+  };
 
   render() {
     const { items } = this.state;
