@@ -9,8 +9,8 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background: lighten($ui-base-color, 4%);
-  border: 0px none $haiku-green;
-  border-radius: 0px;
+  border: 0 none $haiku-green;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -22,7 +22,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  border: 0px none $haiku-green;
+  border: 0 none $haiku-green;
   border-radius: 0;
   background: darken($haiku-green, 7%);
 }
