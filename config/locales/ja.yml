@@ -1765,6 +1765,7 @@ ja:
     contrast: Mastodon (ハイコントラスト)
     default: Mastodon (ダーク)
     mastodon-light: Mastodon (ライト)
+    mastodon-thin: Mastodon (Thin)
     haiku: ハイク
     system: 自動 (システムのテーマを使用)
   time:

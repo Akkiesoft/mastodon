@@ -1,0 +1,26 @@
+@import 'application';
+
+
+.status {
+    padding: 8px 12px;
+}
+
+.status__info {
+    margin-bottom: 5px;
+}
+
+.status__action-bar {
+    justify-content: start;
+    margin-top: 5px;
+}
+
+.status__content {
+    line-height: 20px;
+}
+
+.status .attachment-list,
+.status .audio-player,
+.status .media-gallery,
+.status .video-player {
+    margin-top: 8px;
+}
