@@ -5,13 +5,18 @@
     padding: 8px 12px;
 }
 
+.status__prepend {
+    padding: 8px 12px 0;
+    line-height: 20px;
+}
+
 .status__info {
     margin-bottom: 5px;
 }
 
 .status__action-bar {
     justify-content: start;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .status__content {
@@ -23,4 +28,9 @@
 .status .media-gallery,
 .status .video-player {
     margin-top: 8px;
+}
+
+.notification__message {
+    padding: 8px 12px 0;
+    line-height: 20px;
 }
