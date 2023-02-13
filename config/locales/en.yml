@@ -1808,6 +1808,7 @@ en:
     mastodon-light: Mastodon (Light)
     mastodon-thin: Mastodon (Thin)
     haiku: Haiku
+    haiku-thin: Haiku (Thin)
     system: Automatic (use system theme)
   time:
     formats:

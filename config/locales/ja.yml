@@ -1777,6 +1777,7 @@ ja:
     mastodon-light: Mastodon (ライト)
     mastodon-thin: Mastodon (Thin)
     haiku: ハイク
+    haiku-thin: ハイク (Thin)
     system: 自動 (システムのテーマを使用)
   time:
     formats:
