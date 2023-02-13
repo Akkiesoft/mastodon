@@ -1,4 +1,5 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 haiku: styles/haiku.scss
+haiku-thin: styles/haiku-thin.scss
 mastodon-thin: styles/mastodon-thin.scss
