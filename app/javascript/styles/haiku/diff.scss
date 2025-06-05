@@ -20,6 +20,9 @@ body {
   &.button-alternative-2 {
     color: $white;
   }
+  &:hover {
+    background-color: lighten($haiku-blue-dark, 5%);
+  }
 }
 
 // Change default background colors of columns
@@ -107,12 +110,20 @@ a.mention,
   background: $ui-base-color;
 }
 
+.status {
+  padding: 12px;
+}
+
+.notification-ungrouped {
+  padding: 12px;
+}
+
 .status.status-direct {
-  background: lighten($ui-base-color, 4%);
+  background: lighten($ui-base-color, 8%);
 }
 
 .focusable:focus .status.status-direct {
-  background: lighten($ui-base-color, 8%);
+  background: lighten($ui-base-color, 12%);
 }
 
 .detailed-status,
@@ -382,6 +393,18 @@ a.mention,
   box-shadow: none;
 }
 
+
+.compose-form .autosuggest-textarea__textarea,
+.compose-form__highlightable,
+.autosuggest-textarea__suggestions,
+.search__input,
+.search__popout,
+.emoji-mart-search input,
+.language-dropdown__dropdown .emoji-mart-search input,
+.poll__option input[type='text'] {
+  background: darken($white, 10%);
+}
+
 .language-dropdown__dropdown__results__item:hover,
 .language-dropdown__dropdown__results__item:focus,
 .language-dropdown__dropdown__results__item:active {
@@ -403,4 +426,12 @@ a.mention,
 .report-dialog-modal,
 .block-modal {
   color: #fff;
+}
+
+.drawer {
+  width: 300px;
+}
+
+.column {
+  width: clamp(350px, calc((100% - 350px) / 4), 350px);
 }
