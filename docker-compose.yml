@@ -58,8 +58,8 @@ services:
 
   web:
     # You can uncomment the following line if you want to not use the prebuilt image, for example if you have local code changes
-    # build: .
-    image: ghcr.io/mastodon/mastodon:v4.5.3
+    build: .
+    # image: ghcr.io/mastodon/mastodon:v4.5.3
     restart: always
     env_file: .env.production
     command: bundle exec puma -C config/puma.rb
