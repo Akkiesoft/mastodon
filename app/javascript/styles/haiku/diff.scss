@@ -1,34 +1,39 @@
 // Notes!
 // Sass color functions, "darken" and "lighten" are automatically replaced.
+@use 'sass:color';
+@use '../mastodon/variables' as *;
+@use 'variables' as haiku;
+@use '../mastodon/functions' as *;
 
 body {
   &.app-body {
     &.layout-single-column {
-      background: $haiku-green-light;
+      background: haiku.$haiku-green-light;
     }
 
     &.layout-multiple-columns {
-      background: $haiku-green-light;
+      background: haiku.$haiku-green-light;
     }
   }
 }
 
 // Change the colors of button texts
 .button {
-  color: $white;
+  color: haiku.$white;
 
   &.button-alternative-2 {
-    color: $white;
+    color: haiku.$white;
   }
+
   &:hover {
-    background-color: lighten($haiku-blue-dark, 5%);
+    background-color: lighten(haiku.$haiku-blue-dark, 5%);
   }
 }
 
 // Change default background colors of columns
 .column {
   > .scrollable {
-    background: $white;
+    background: haiku.$white;
     border: 5px $ui-base-color solid;
   }
 }
@@ -38,27 +43,33 @@ body {
 }
 
 .drawer__inner__mastodon {
-  background: $ui-base-color url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#{hex-color($haiku-blue)}"/></svg>') no-repeat bottom / 100% auto;
+  background: $ui-base-color
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#{hex-color(haiku.$haiku-blue)}"/></svg>')
+    no-repeat bottom / 100% auto;
 }
 
 // Change the colors used in compose-form
+.compose-form .compose-form__warning {
+  background-color: $white;
+}
+
 .compose-form {
   .compose-form__modifiers {
     .compose-form__upload__actions .icon-button {
-      color: lighten($white, 7%);
+      color: lighten(haiku.$white, 7%);
 
       &:active,
       &:focus,
       &:hover {
-        color: $white;
+        color: haiku.$white;
       }
     }
 
     .compose-form__upload-description input {
-      color: lighten($white, 7%);
+      color: lighten(haiku.$white, 7%);
 
       &::placeholder {
-        color: lighten($white, 7%);
+        color: lighten(haiku.$white, 7%);
       }
     }
   }
@@ -98,11 +109,11 @@ body {
 .fa-reply-all,
 a.mention,
 .status__action-bar__counter__label {
-  color: $haiku-red;
+  color: haiku.$haiku-red;
 }
 
 .notification__message {
-  color: $black;
+  color: haiku.$black;
 }
 
 // Change the background colors of statuses
@@ -201,7 +212,7 @@ a.mention,
 .simple_form .block-button,
 .simple_form .button,
 .simple_form button {
-  color: $white;
+  color: haiku.$white;
 }
 
 .dropdown-menu__separator {
@@ -238,11 +249,11 @@ a.mention,
 }
 
 .display-case__case {
-  background: $white;
+  background: haiku.$white;
 }
 
 .embed-modal .embed-modal__container .embed-modal__html {
-  background: $white;
+  background: haiku.$white;
 
   &:focus {
     background: darken($ui-base-color, 6%);
@@ -257,7 +268,8 @@ a.mention,
   background: darken($ui-secondary-color, 10%);
 }
 
-.react-toggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+.react-toggle.react-toggle--checked:hover:not(.react-toggle--disabled)
+  .react-toggle-track {
   background: lighten($ui-highlight-color, 10%);
 }
 
@@ -269,13 +281,13 @@ a.mention,
 
 // Change the default colors used on some parts of the profile pages
 .activity-stream-tabs {
-  background: $account-background-color;
+  background: haiku.$account-background-color;
   border-bottom-color: lighten($ui-base-color, 8%);
 }
 
 .activity-stream {
   .entry {
-    background: $account-background-color;
+    background: haiku.$account-background-color;
 
     .detailed-status.light,
     .more.light,
@@ -338,10 +350,10 @@ a.mention,
 }
 
 .button.logo-button {
-  color: $white;
+  color: haiku.$white;
 
   svg path:first-child {
-    fill: $white;
+    fill: haiku.$white;
   }
 }
 
@@ -369,7 +381,7 @@ a.mention,
       &__name {
         h1,
         h1 small {
-          color: $white;
+          color: haiku.$white;
         }
       }
     }
@@ -377,7 +389,7 @@ a.mention,
 }
 
 .account__section-headline a.active::after {
-  border-color: transparent transparent $white;
+  border-color: transparent transparent haiku.$white;
 }
 
 .hero-widget,
@@ -393,7 +405,6 @@ a.mention,
   box-shadow: none;
 }
 
-
 .compose-form .autosuggest-textarea__textarea,
 .compose-form__highlightable,
 .autosuggest-textarea__suggestions,
@@ -402,13 +413,13 @@ a.mention,
 .emoji-mart-search input,
 .language-dropdown__dropdown .emoji-mart-search input,
 .poll__option input[type='text'] {
-  background: darken($white, 10%);
+  background: darken(haiku.$white, 10%);
 }
 
 .language-dropdown__dropdown__results__item:hover,
 .language-dropdown__dropdown__results__item:focus,
 .language-dropdown__dropdown__results__item:active {
-  background-color: $haiku-red-light;
+  background-color: haiku.$haiku-red-light;
 }
 
 .status-card__title {
@@ -416,7 +427,7 @@ a.mention,
 }
 
 .upload-progress {
-  color: $haiku-green;
+  color: haiku.$haiku-green;
 }
 
 .account__header__bar {
@@ -434,4 +445,15 @@ a.mention,
 
 .column {
   width: clamp(350px, calc((100% - 350px) / 4), 350px);
+}
+
+.compose-form .autosuggest-textarea__textarea,
+.compose-form__highlightable,
+.autosuggest-textarea__suggestions,
+.search__input,
+.search__popout,
+.emoji-mart-search input,
+.language-dropdown__dropdown .emoji-mart-search input,
+.poll__option input[type='text'] {
+  background: #fff;
 }
