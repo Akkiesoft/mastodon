@@ -1,8 +1,8 @@
 @use 'sass:color';
 
 // Dependent colors
-$black: #333333;
-$white: #ffffff;
+$black: #333;
+$white: #fff;
 
 $haiku-red: #b36b85;
 $haiku-green: #7ba86d;
@@ -13,57 +13,43 @@ $haiku-blue-light: #b8cbd9;
 $haiku-green-dark: #659357;
 $haiku-red-dark: #bd6260;
 $haiku-blue-dark: #557790;
-$ui-button-background-color: $haiku-blue-dark !default;
 
-$warning-red: $haiku-red-dark;
+// Newly added colors
+$account-background-color: $white;
+
+// Differences
+$success-green: #3c754d;
 
 $classic-base-color: #18460d;
 $classic-primary-color: $haiku-blue;
 $classic-secondary-color: $haiku-green;
 $classic-highlight-color: #6364ff;
 
-// Differences
-$success-green: #3c754d;
+@use '../mastodon/variables' with (
+  $ui-button-background-color: $haiku-blue-dark,
 
-$base-overlay-background: $white !default;
-$simple-background-color: $white !default;
-$valid-value-color: $success-green !default;
+  $warning-red: $haiku-red-dark,
 
-$ui-base-color: $classic-secondary-color !default;
+  $base-overlay-background: $white,
+  $simple-background-color: $white,
+  $valid-value-color: $success-green,
 
-// discovered  progress bar
-$ui-base-lighter-color: $haiku-blue;
-$ui-primary-color: $haiku-red;
-$ui-secondary-color: $classic-base-color !default;
-$ui-highlight-color: $haiku-red;
+  $ui-base-color: $classic-secondary-color,
 
-$primary-text-color: $black !default;
-$darker-text-color: $classic-base-color !default;
-$dark-text-color: #444b5d;
-$action-button-color: #606984;
+  // discovered  progress bar
+  $ui-base-lighter-color: $haiku-blue,
+  $ui-primary-color: $haiku-red,
+  $ui-secondary-color: $classic-base-color,
+  $ui-highlight-color: $haiku-red,
 
-$inverted-text-color: $black !default;
-$lighter-text-color: $classic-base-color !default;
-$light-text-color: $black;
+  $primary-text-color: $black,
+  $darker-text-color: $classic-base-color,
+  $dark-text-color: #444b5d,
+  $action-button-color: #606984,
 
-// Newly added colors
-$account-background-color: $white !default;
-
-// Invert darkened and lightened colors
-@function darken($color, $amount) {
-  @return hsl(
-    hue($color),
-    color.channel($color, 'saturation', $space: hsl),
-    color.channel($color, 'lightness', $space: hsl) + $amount
-  );
-}
-
-@function lighten($color, $amount) {
-  @return hsl(
-    hue($color),
-    color.channel($color, 'saturation', $space: hsl),
-    color.channel($color, 'lightness', $space: hsl) - $amount
-  );
-}
+  $inverted-text-color: $black,
+  $lighter-text-color: $classic-base-color,
+  $light-text-color: $black
+);
 
 $emojis-requiring-inversion: 'chains';
