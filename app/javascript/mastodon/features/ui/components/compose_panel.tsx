@@ -13,6 +13,7 @@ import { Search } from 'mastodon/features/compose/components/search';
 import ComposeFormContainer from 'mastodon/features/compose/containers/compose_form_container';
 import { LinkFooter } from 'mastodon/features/ui/components/link_footer';
 import { useIdentity } from 'mastodon/identity_context';
+import UnaristAnnouncements from 'mastodon/features/compose/components/announcements';
 
 export const ComposePanel: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -48,7 +49,12 @@ export const ComposePanel: React.FC = () => {
         </>
       )}
 
-      {signedIn && !hideComposer && <ComposeFormContainer singleColumn />}
+      {signedIn && !hideComposer && (
+        <>
+          <ComposeFormContainer singleColumn />
+          <UnaristAnnouncements />
+        </>
+      )}
       {signedIn && hideComposer && <div className='compose-form' />}
 
       <LinkFooter multiColumn={!singleColumn} />
