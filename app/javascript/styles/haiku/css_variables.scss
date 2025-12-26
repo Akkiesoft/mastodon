@@ -1,0 +1,9 @@
+@use 'sass:color';
+@use '../mastodon/variables' as *;
+@use 'variables' as haiku;
+@use '../mastodon/functions' as *;
+
+body {
+  --modal-border-color: #{haiku.$haiku-blue-dark};
+  --modal-background-color: #{haiku.$haiku-blue-light};
+}
